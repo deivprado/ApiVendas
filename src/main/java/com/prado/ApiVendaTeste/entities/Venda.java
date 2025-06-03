@@ -2,6 +2,7 @@ package com.prado.ApiVendaTeste.entities;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,11 +21,14 @@ public class Venda {
 
     private double total;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "cliente_id", referencedColumnName = "id", nullable = false)
     private Cliente cliente;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "vendedor_id", referencedColumnName = "id", nullable = false)
     private Vendedor vendedor;
+
+    @OneToMany(mappedBy = "venda")
+    private List<ItemVenda> itens;
 }
