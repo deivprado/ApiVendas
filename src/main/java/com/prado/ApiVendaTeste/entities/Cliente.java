@@ -1,6 +1,5 @@
 package com.prado.ApiVendaTeste.entities;
 
-import com.sun.istack.internal.NotNull;
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -16,7 +15,6 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
     private String nome;
 
     @Column(name = "cpf", unique = true, nullable = false)

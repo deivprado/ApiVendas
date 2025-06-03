@@ -1,7 +1,7 @@
 package com.prado.ApiVendaTeste.entities;
 
-import com.sun.istack.internal.NotNull;
 import jakarta.persistence.*;
+import java.time.LocalDateTime;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,10 +16,8 @@ public class Venda {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private LocalDateTime dataCompra;
 
-    //private LocalDateTime dataCompra;
-
-    @NotNull
     private double total;
 
     @OneToMany
